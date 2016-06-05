@@ -32,4 +32,6 @@
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
+    <include layout="@layout/drawer_items_layout" />
+
 </LinearLayout>
