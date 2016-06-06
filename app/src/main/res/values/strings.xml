@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RollAndroidDB</string>
+    <string name="add_personTitle">Add Person</string>
+    <string name="remove_personTitle">Remove Person</string>
+    <string name="refreshTitle">Refresh</string>
+    <string name="clear_dbTitle">Clear DB</string>
+    <string name="externalTitle">External</string>
+    <string name="create_dbTitle">Create DB</string>
+    <string name="deleteTitle">Delete DB</string>
+    <string name="exitTitle">Exit</string>
 </resources>

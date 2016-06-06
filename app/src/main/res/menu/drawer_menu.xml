@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/add_person_drawer_item"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="@string/add_personTitle" />
+        <item
+            android:id="@+id/remove_person_drawer_item"
+            android:icon="@android:drawable/ic_input_delete"
+            android:title="@string/remove_personTitle" />
+        <item
+            android:id="@+id/refresh_text_view"
+            android:icon="@android:drawable/stat_notify_sync"
+            android:title="@string/refreshTitle" />
+        <item
+            android:id="@+id/clear_DB_drawer_item"
+            android:icon="@android:drawable/ic_delete"
+            android:title="@string/clear_dbTitle" />
+    </group>
+
+    <item android:title="@string/externalTitle">
+        <menu>
+            <item
+                android:id="@+id/create_DB_drawer_item"
+                android:icon="@android:drawable/ic_input_add"
+                android:title="@string/create_dbTitle" />
+            <item
+                android:id="@+id/delete_DB_drawer_item"
+                android:icon="@android:drawable/ic_menu_delete"
+                android:title="@string/deleteTitle" />
+            <item
+                android:id="@+id/exit_app"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="@string/exitTitle" />
+        </menu>
+    </item>
+
 </menu>
