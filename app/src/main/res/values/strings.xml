@@ -8,4 +8,9 @@
     <string name="create_dbTitle">Create DB</string>
     <string name="deleteTitle">Delete DB</string>
     <string name="exitTitle">Exit</string>
+    <string name="sql_dbTitle">SQL DB</string>
+    <string name="enter_nameHint">Enter Name</string>
+    <string name="enter_emailHint">Enter Email</string>
+    <string name="enter_phoneHint">Enter Phone</string>
+    <string name="enter_idHint">Enter ID</string>
 </resources>
