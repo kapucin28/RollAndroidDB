@@ -1,9 +1,11 @@
-package com.kapucin28.rollandroiddb;
+package com.kapucin28.rollandroiddb.main;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.kapucin28.rollandroiddb.R;
 
 import java.io.File;
 
