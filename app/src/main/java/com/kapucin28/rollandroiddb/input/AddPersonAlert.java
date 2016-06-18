@@ -1,6 +1,7 @@
 package com.kapucin28.rollandroiddb.input;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -37,7 +38,23 @@ public class AddPersonAlert extends DialogFragment{
         personPhoneText = (EditText) view.findViewById(R.id.person_phone_alert_box_edit_text);
         //------------------------------------------------------------------------------------------
 
-        return super.onCreateDialog(savedInstanceState);
+        // Initializing builder---------------------------------------------------------------------
+        builder = new AlertDialog.Builder(getActivity());
+        builder.setView(view).setPositiveButton("CREATE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                sendResults.userInputPersonDetails(personNameText.getText().toString(),
+                        personEmailText.getText().toString(), personPhoneText.getText().toString());
+            }
+        }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        //------------------------------------------------------------------------------------------
+
+        return builder.create();
     }
     //----------------------------------------------------------------------------------------------
 }
