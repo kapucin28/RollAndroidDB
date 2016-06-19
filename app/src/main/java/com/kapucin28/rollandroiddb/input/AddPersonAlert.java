@@ -1,5 +1,6 @@
 package com.kapucin28.rollandroiddb.input;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,9 +15,12 @@ import com.kapucin28.rollandroiddb.R;
 
 /**
  * Created by K@puc!n on 12-Jun-16.
- *
  */
-public class AddPersonAlert extends DialogFragment{
+public class AddPersonAlert extends DialogFragment {
+
+    // Sending Results interface--------------------------------------------------------------------
+    private SendResults sendResults;
+    //----------------------------------------------------------------------------------------------
 
     // Layout variables-----------------------------------------------------------------------------
     private LayoutInflater layoutInflater;
@@ -55,6 +59,20 @@ public class AddPersonAlert extends DialogFragment{
         //------------------------------------------------------------------------------------------
 
         return builder.create();
+    }
+    //----------------------------------------------------------------------------------------------
+
+    // OnAttach method------------------------------------------------------------------------------
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        sendResults = (SendResults) activity;
+    }
+    //----------------------------------------------------------------------------------------------
+
+    // Communicating method-------------------------------------------------------------------------
+    public interface SendResults {
+        void userInputPersonDetails(String personName, String personEmail, String personPhone);
     }
     //----------------------------------------------------------------------------------------------
 }
