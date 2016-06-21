@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.kapucin28.rollandroiddb.R;
+
 /**
  * Created by K@puc!n on 12-Jun-16.
  *
@@ -30,6 +32,12 @@ public class RemovePersonAlert extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        // Initializing views-----------------------------------------------------------------------
+        layoutInflater = getActivity().getLayoutInflater();
+        view = layoutInflater.inflate(R.layout.remove_person_alert_box, null);
+        removeID = (EditText) view.findViewById(R.id.remove_edit_text);
+        //------------------------------------------------------------------------------------------
         return super.onCreateDialog(savedInstanceState);
     }
     //----------------------------------------------------------------------------------------------
