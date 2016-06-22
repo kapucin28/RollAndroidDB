@@ -1,6 +1,7 @@
 package com.kapucin28.rollandroiddb.input;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -13,7 +14,6 @@ import com.kapucin28.rollandroiddb.R;
 
 /**
  * Created by K@puc!n on 12-Jun-16.
- *
  */
 public class RemovePersonAlert extends DialogFragment {
 
@@ -38,7 +38,22 @@ public class RemovePersonAlert extends DialogFragment {
         view = layoutInflater.inflate(R.layout.remove_person_alert_box, null);
         removeID = (EditText) view.findViewById(R.id.remove_edit_text);
         //------------------------------------------------------------------------------------------
-        return super.onCreateDialog(savedInstanceState);
+
+        // Initializing builder---------------------------------------------------------------------
+        builder = new AlertDialog.Builder(getActivity());
+        builder.setView(view).setPositiveButton("REMOVE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                sendResult.userInputID(removeID.getText().toString());
+            }
+        }).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        return builder.create();
     }
     //----------------------------------------------------------------------------------------------
 }
