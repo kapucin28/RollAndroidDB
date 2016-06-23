@@ -1,5 +1,6 @@
 package com.kapucin28.rollandroiddb.input;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -54,6 +55,20 @@ public class RemovePersonAlert extends DialogFragment {
         });
 
         return builder.create();
+    }
+    //----------------------------------------------------------------------------------------------
+
+    // OnAttach method------------------------------------------------------------------------------
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        sendResult = (SendResult) activity;
+    }
+    //----------------------------------------------------------------------------------------------
+
+    // Communicating method-------------------------------------------------------------------------
+    public interface SendResult {
+        void userInputID(String ID);
     }
     //----------------------------------------------------------------------------------------------
 }
