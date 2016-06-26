@@ -36,6 +36,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private File file;
     //----------------------------------------------------------------------------------------------
 
+    // DB content variables-------------------------------------------------------------------------
+    private Set<String> list = new TreeSet<>();
+    private TextView textView;
+    private String idSQL;
+    //----------------------------------------------------------------------------------------------
+    
+    // Calling classes variables--------------------------------------------------------------------
+    private AddPersonAlert addPersonAlert;
+    private RemovePersonAlert removePersonAlert;
+    //----------------------------------------------------------------------------------------------
+
     // OnCreate method------------------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
