@@ -16,8 +16,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 
 import com.kapucin28.rollandroiddb.R;
-import com.qdv8.sqldbcreator.input.AddPersonAlert;
-import com.qdv8.sqldbcreator.input.RemovePersonAlert;
+import com.kapucin28.rollandroidbd.input.AddPersonAlert;
+import com.kapucin28.rollandroidbd.input.RemovePersonAlert;
 
 import java.io.File;
 import java.util.Set;
@@ -45,6 +45,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     // Calling classes variables--------------------------------------------------------------------
     private AddPersonAlert addPersonAlert;
     private RemovePersonAlert removePersonAlert;
+    //----------------------------------------------------------------------------------------------
+
+    // Drawer variables-----------------------------------------------------------------------------
+    private Toolbar toolbar;
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
+    private Menu navMenu;
+    private MenuItem item1, item2, item3, item4, item5, item6, item7;
+
+    private boolean addNavItem = true;
+    private boolean removeNavItem = true;
+    private boolean refreshNavItem = true;
+    private boolean clearNavItem = true;
+    private boolean createNavItem = false;
+    private boolean deleteNavItem = true;
+    private boolean exitNavItem = true;
     //----------------------------------------------------------------------------------------------
 
     // OnCreate method------------------------------------------------------------------------------
