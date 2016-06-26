@@ -68,7 +68,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_layout);
+        setContentView(R.layout.activity_main_drawer);
+
+        drawer = (DrawerLayout) findViewById(R.id.activity_main_drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        textView = (TextView) findViewById(R.id.text_view_db);
+
+        createStartup();
+        displayStartup();
+        toolbarSetup();
+        drawerSetup();
+        navigationSetup();
+        startupMenuItemsStatus();
     }
     //----------------------------------------------------------------------------------------------
 }
