@@ -83,4 +83,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startupMenuItemsStatus();
     }
     //----------------------------------------------------------------------------------------------
+
+    // Toolbar setup method-------------------------------------------------------------------------
+    private void toolbarSetup() {
+        setSupportActionBar(toolbar);
+    }
+    //----------------------------------------------------------------------------------------------
 }
