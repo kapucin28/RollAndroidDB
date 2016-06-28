@@ -89,4 +89,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
     }
     //----------------------------------------------------------------------------------------------
+
+    // Drawer items status at startup---------------------------------------------------------------
+    private void startupMenuItemsStatus() {
+        navMenu = navigationView.getMenu();
+        item1 = navMenu.findItem(R.id.add_person_drawer_item).setEnabled(addNavItem);
+        item2 = navMenu.findItem(R.id.remove_person_drawer_item).setEnabled(removeNavItem);
+        item3 = navMenu.findItem(R.id.refresh_text_view).setEnabled(refreshNavItem);
+        item4 = navMenu.findItem(R.id.clear_DB_drawer_item).setEnabled(clearNavItem);
+        item5 = navMenu.findItem(R.id.create_DB_drawer_item).setEnabled(createNavItem);
+        item6 = navMenu.findItem(R.id.delete_DB_drawer_item).setEnabled(deleteNavItem);
+        item7 = navMenu.findItem(R.id.exit_app).setEnabled(exitNavItem);
+    }
+    //----------------------------------------------------------------------------------------------
 }
