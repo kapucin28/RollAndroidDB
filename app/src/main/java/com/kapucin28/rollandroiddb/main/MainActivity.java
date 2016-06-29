@@ -115,4 +115,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.exitNavItem = exitNavItem;
     }
     //----------------------------------------------------------------------------------------------
+
+    // Drawer setup---------------------------------------------------------------------------------
+    private void drawerSetup() {
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+    //----------------------------------------------------------------------------------------------
 }
