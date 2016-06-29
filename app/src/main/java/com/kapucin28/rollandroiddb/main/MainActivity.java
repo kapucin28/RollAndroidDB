@@ -102,4 +102,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         item7 = navMenu.findItem(R.id.exit_app).setEnabled(exitNavItem);
     }
     //----------------------------------------------------------------------------------------------
+
+    // Drawer items status--------------------------------------------------------------------------
+    private void drawerItemsStatus(boolean addNavItem, boolean removeNavItem, boolean refreshNavItem, boolean clearNavItem,
+                                   boolean createNavItem, boolean deleteNavItem, boolean exitNavItem) {
+        this.addNavItem = addNavItem;
+        this.removeNavItem = removeNavItem;
+        this.refreshNavItem = refreshNavItem;
+        this.clearNavItem = clearNavItem;
+        this.createNavItem = createNavItem;
+        this.deleteNavItem = deleteNavItem;
+        this.exitNavItem = exitNavItem;
+    }
+    //----------------------------------------------------------------------------------------------
 }
