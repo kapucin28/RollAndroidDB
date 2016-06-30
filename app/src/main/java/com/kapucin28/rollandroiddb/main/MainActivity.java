@@ -123,4 +123,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
     }
     //----------------------------------------------------------------------------------------------
+
+    // NavigationView setup method------------------------------------------------------------------
+    private void navigationSetup() {
+        assert navigationView != null;
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+    //----------------------------------------------------------------------------------------------
 }
