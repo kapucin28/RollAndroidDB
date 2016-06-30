@@ -130,4 +130,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
     //----------------------------------------------------------------------------------------------
+
+    // Drawer closed method-------------------------------------------------------------------------
+    @Override
+    public void onBackPressed() {
+        assert drawer != null;
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
 }
