@@ -175,4 +175,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
     //----------------------------------------------------------------------------------------------
+
+    // Activate DB on startup-----------------------------------------------------------------------
+    private void createStartup() {
+        sqLiteDatabase = this.openOrCreateDatabase(databaseName, MODE_PRIVATE, null);
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + tableName +
+                " (id integer primary key, name VARCHAR, email VARCHAR, phone long);");
+        drawerItemsStatus(true, true, true, true, false, true, true);
+        startupMenuItemsStatus();
+    }
+    //----------------------------------------------------------------------------------------------
 }
