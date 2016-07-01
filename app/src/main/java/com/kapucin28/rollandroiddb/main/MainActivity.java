@@ -142,4 +142,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     //----------------------------------------------------------------------------------------------
+
+    // NavDrawer items action method----------------------------------------------------------------
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_person_drawer_item:
+                addPerson();
+                break;
+            case R.id.remove_person_drawer_item:
+                removePerson();
+                break;
+            case R.id.refresh_text_view:
+                refreshDB();
+                break;
+            case R.id.clear_DB_drawer_item:
+                clearDB();
+                break;
+            case R.id.create_DB_drawer_item:
+                activateDB();
+                break;
+            case R.id.delete_DB_drawer_item:
+                deleteDB();
+                break;
+            case R.id.exit_app:
+                finish();
+        }
+
+        assert drawer != null;
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
+    //----------------------------------------------------------------------------------------------
 }
