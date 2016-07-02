@@ -185,4 +185,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startupMenuItemsStatus();
     }
     //----------------------------------------------------------------------------------------------
+
+    // Creating database method---------------------------------------------------------------------
+    private void activateDB() {
+        createStartup();
+        Toast.makeText(this, "DB Activated", Toast.LENGTH_SHORT).show();
+    }
+    //----------------------------------------------------------------------------------------------
 }
