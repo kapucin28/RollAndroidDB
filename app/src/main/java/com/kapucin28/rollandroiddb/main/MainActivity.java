@@ -192,4 +192,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast.makeText(this, "DB Activated", Toast.LENGTH_SHORT).show();
     }
     //----------------------------------------------------------------------------------------------
+
+    // Display DB at startup method-----------------------------------------------------------------
+    private void displayStartup() {
+        // Refresh textView-------------------------------------------------------------------------
+        textView.setText("");
+        //------------------------------------------------------------------------------------------
+
+        // Selecting members from DB----------------------------------------------------------------
+        cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + tableName, null);
+        idColumn = cursor.getColumnIndex("id");
+        nameColumn = cursor.getColumnIndex("name");
+        emailColumn = cursor.getColumnIndex("email");
+        phoneColumn = cursor.getColumnIndex("phone");
+        cursor.moveToFirst();
+
+        if (cursor.getCount() > 0) {
+            do {
+                id = cursor.getString(idColumn);
+                name = cursor.getString(nameColumn);
+                email = cursor.getString(emailColumn);
+                phone = cursor.getString(phoneColumn);
+
+                personDetails = id + " .Name: " + name + "\n" + "   Email: " + email + "\n" +
+                        "   Phone: " + phone + "\n" + "\n";
+                list.add(personDetails);
+            } while (cursor.moveToNext());
+        } else {
+            Toast.makeText(this, "Add Members", Toast.LENGTH_SHORT).show();
+            textView.setText("");
+        }
+        //------------------------------------------------------------------------------------------
+
+        // Displaying DB content--------------------------------------------------------------------
+        for (String content : list) {
+            textView.append(content);
+        }
+        cursor.close();
+        //------------------------------------------------------------------------------------------
+    }
+    //----------------------------------------------------------------------------------------------
 }
