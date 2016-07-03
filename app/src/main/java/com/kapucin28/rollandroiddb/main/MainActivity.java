@@ -239,4 +239,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         displayStartup();
     }
     //----------------------------------------------------------------------------------------------
+
+    // Clear DB method------------------------------------------------------------------------------
+    private void clearDB() {
+        if (!list.isEmpty()) {
+            for (int i = 0; i < list.size(); i++) {
+                idSQL = String.valueOf(i);
+                sqLiteDatabase.execSQL("DELETE FROM " + tableName + " WHERE id = " + idSQL + ";");
+            }
+            this.deleteDatabase(databaseName);
+            activateDB();
+            refreshDB();
+            Toast.makeText(this, "DB Cleared", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "DB Already Empty", Toast.LENGTH_SHORT).show();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
 }
