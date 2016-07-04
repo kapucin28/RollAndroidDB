@@ -271,4 +271,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startupMenuItemsStatus();
     }
     //----------------------------------------------------------------------------------------------
+
+    // Add person to DB method----------------------------------------------------------------------
+    private void addPerson() {
+        addPersonAlert = new AddPersonAlert();
+        addPersonAlert.show(getSupportFragmentManager(), "Add person alert");
+    }
+    //----------------------------------------------------------------------------------------------
 }
