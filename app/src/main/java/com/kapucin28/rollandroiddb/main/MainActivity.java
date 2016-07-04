@@ -256,4 +256,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     //----------------------------------------------------------------------------------------------
+
+    // Delete DB method-----------------------------------------------------------------------------
+    private void deleteDB() {
+        for (int i = 0; i < list.size(); i++) {
+            idSQL = String.valueOf(i);
+            sqLiteDatabase.execSQL("DELETE FROM " + tableName + " WHERE id = " + idSQL + ";");
+        }
+        this.deleteDatabase(databaseName);
+        list.clear();
+        textView.setText("");
+        Toast.makeText(this, "DB Deleted", Toast.LENGTH_SHORT).show();
+        drawerItemsStatus(false, false, false, false, true, false, true);
+        startupMenuItemsStatus();
+    }
+    //----------------------------------------------------------------------------------------------
 }
