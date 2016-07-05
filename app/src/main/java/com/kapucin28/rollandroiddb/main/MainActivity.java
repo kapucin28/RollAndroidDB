@@ -278,4 +278,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         addPersonAlert.show(getSupportFragmentManager(), "Add person alert");
     }
     //----------------------------------------------------------------------------------------------
+
+    // Returning userInputPersonName method---------------------------------------------------------
+    @Override
+    public void userInputPersonDetails(String personName, String personEmail, String personPhone) {
+        if (!TextUtils.isEmpty(personName) && !TextUtils.isEmpty(personEmail) && !TextUtils.isEmpty(personPhone)) {
+            file = getApplicationContext().getDatabasePath(databaseName);
+            if (file.exists()) {
+                sqLiteDatabase.execSQL("INSERT INTO " + tableName + " (name, email, phone) VALUES ('" + personName + "', '" +
+                        personEmail + "', '" + personPhone + "');");
+                Toast.makeText(this, "Person Added", Toast.LENGTH_SHORT).show();
+                refreshDB();
+            } else {
+                Toast.makeText(this, "Create DB First", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Enter All Details", Toast.LENGTH_SHORT).show();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
 }
