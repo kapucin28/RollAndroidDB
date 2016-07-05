@@ -297,4 +297,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     //----------------------------------------------------------------------------------------------
+
+    // Remove person from DB method-----------------------------------------------------------------
+    private void removePerson() {
+        removePersonAlert = new RemovePersonAlert();
+        removePersonAlert.show(getSupportFragmentManager(), "Remove person alert");
+    }
+    //----------------------------------------------------------------------------------------------
 }
