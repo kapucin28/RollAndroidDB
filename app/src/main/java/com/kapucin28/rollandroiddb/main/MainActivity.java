@@ -304,4 +304,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         removePersonAlert.show(getSupportFragmentManager(), "Remove person alert");
     }
     //----------------------------------------------------------------------------------------------
+
+    // Returning userInputID method-----------------------------------------------------------------
+    @Override
+    public void userInputID(String ID) {
+        if (!TextUtils.isEmpty(ID)) {
+            sqLiteDatabase.execSQL("DELETE FROM " + tableName + " WHERE id = " + ID + ";");
+            Toast.makeText(this, "Person Removed", Toast.LENGTH_SHORT).show();
+            refreshDB();
+        } else {
+            Toast.makeText(this, "Enter ID", Toast.LENGTH_SHORT).show();
+        }
+    }
+    //----------------------------------------------------------------------------------------------
 }
