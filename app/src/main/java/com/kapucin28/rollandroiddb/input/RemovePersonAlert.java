@@ -15,6 +15,10 @@ import com.kapucin28.rollandroiddb.R;
 
 /**
  * Created by K@puc!n on 12-Jun-16.
+ * 
+ *      This class will open an alert box in which the user will
+ * complete the name, email and phone of the person that will be
+ * removed from the database
  */
 public class RemovePersonAlert extends DialogFragment {
 
