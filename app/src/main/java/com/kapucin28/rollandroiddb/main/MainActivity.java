@@ -23,6 +23,13 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Created by K@puc!n on 12-Jun-16.
+ * 
+ *      This is the main class where all of the actions
+ * will be performed
+ */
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         AddPersonAlert.SendResults, RemovePersonAlert.SendResult{
 
